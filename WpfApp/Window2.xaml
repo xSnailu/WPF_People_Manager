@@ -1,0 +1,131 @@
+﻿<Window x:Class="WpfApp.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        xmlns:local="clr-namespace:WpfApp"
+        Background="#00000000"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="SexEnum" MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:SEX"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+
+
+        <ControlTemplate x:Key="ValidationTemplate">
+            <DockPanel>
+                <TextBlock Foreground="Red" FontSize="20">!</TextBlock>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+
+        <Style x:Key="AcceptButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=(Validation.HasError), ElementName=NameBox}" Value="False"/>
+                        <Condition Binding="{Binding Path=(Validation.HasError), ElementName=SurnameBox}" Value="False"/>
+                        <Condition Binding="{Binding Path=(Validation.HasError), ElementName=EmailBox}" Value="False"/>
+                        <Condition Binding="{Binding Path=(Validation.HasError), ElementName=PhoneBox}" Value="False"/>
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="True"/>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- https://stackoverflow.com/questions/10103302/how-to-bind-images-tooltip-to-exception-error-message-in-xaml -->
+        <Style x:Key="TextBoxInError" TargetType="{x:Type TextBox}">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <Border BorderBrush="Red" BorderThickness="2" DockPanel.Dock="Left">
+                                <AdornedElementPlaceholder />
+                            </Border>
+                            <Image Source="Resources/error.jpg" Width="20" ToolTip="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)/ErrorContent}"/>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+           
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid Width="350" Height="240" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFFFFF">
+            <Border BorderThickness="4" BorderBrush="Black">
+                <StackPanel>
+                    <TextBlock Text="Add new contact" HorizontalAlignment="Center" FontSize="20"/>
+                    <Grid Height="160">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="Name"/>
+                        <Label Grid.Row="1" Content="Surname"/>
+                        <Label Grid.Row="2" Content="Email"/>
+                        <Label Grid.Row="3" Content="Phone"/>
+                        <Label Grid.Row="4" Content="Gender"/>
+
+
+
+                        <TextBox x:Name="NameBox" Grid.Row="0" HorizontalAlignment="Right" Width="150"              
+                                 Style="{StaticResource TextBoxInError}" Loaded="NameBox_Loaded"
+                                 Margin="30 10 30 0"
+                                 Text="{Binding NameW2, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}">
+                        </TextBox>
+                        <TextBox x:Name="SurnameBox" Grid.Row="1" HorizontalAlignment="Right" Width="150" Loaded="NameBox_Loaded"
+                                 Style="{StaticResource TextBoxInError}"
+                                 Margin="30 10 30 0"
+                                 Text="{Binding SurnameW2, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}">
+                        </TextBox>
+                        <TextBox x:Name="EmailBox" Grid.Row="2" HorizontalAlignment="Right" Width="150" Loaded="NameBox_Loaded"
+                                 Style="{StaticResource TextBoxInError}"
+                                 Margin="30 10 30 0"
+                                 Text="{Binding EmailW2, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}">
+                        </TextBox>
+                        <TextBox x:Name="PhoneBox" Grid.Row="3" HorizontalAlignment="Right" Width="150" Loaded="NameBox_Loaded"
+                                 Style="{StaticResource TextBoxInError}"
+                                 Margin="30 10 30 0"
+                                 Text="{Binding PhoneW2, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}">
+                        </TextBox>
+                        <ComboBox x:Name="SexBox"  Margin="30 10 30 0"  Grid.Row="4" SelectedIndex="0" ItemsSource="{Binding Source={StaticResource SexEnum}}" HorizontalAlignment="Right" Width="150"/>
+
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource AcceptButtonStyle}" Grid.Column="0" Content="Add contact" Margin="10" Click="Button_Click2">
+
+                        </Button>
+                        <Button Grid.Column="1"  Content="Close" Margin="10" Click="Button_Click1"/>
+                    </Grid>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,219 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Name="MyWindow"
+        Title="Contact Manager" Height="600" Width="800" MinHeight="500" MinWidth="500" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="SexEnum" MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:SEX"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <CollectionViewSource Source="{Binding Contacts, Mode=TwoWay}" x:Key="ContactsViewSource">
+        </CollectionViewSource>
+
+        <local:SexToPathConventer x:Key="SexToPathConventer" />
+        <local:IndexToBackgroundConventer x:Key="IndexToBackgroundConventer" />
+        <local:StateToVisibility1 x:Key="StateToVisibility1" />
+
+
+        <Style TargetType="ListBoxItem" x:Key="listBoxItemStyleTriggeer">
+
+
+            <!-- (To ze stacka) Set alternating backgrounds on the items in the ListBox.-->
+            <Setter Property="Background" 
+                             Value="{Binding RelativeSource={RelativeSource Self},
+                             Path=(ItemsControl.AlternationIndex),
+                             Converter={StaticResource IndexToBackgroundConventer}}"/>
+
+            <Setter Property="ContextMenu">
+                <Setter.Value>
+                    <ContextMenu>
+                        <MenuItem Header="Delete contact">
+                            <MenuItem.Style>
+                                <Style TargetType="MenuItem">
+                                    <EventSetter Event="Click" Handler="MenuItemDelete_Click"/>
+                                </Style>
+                            </MenuItem.Style>
+                        </MenuItem>
+                    </ContextMenu>
+                </Setter.Value>
+            </Setter>
+
+            <!-- https://docs.microsoft.com/en-us/dotnet/desktop-wpf/themes/how-to-create-apply-template-->
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#FFFDCF6C"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="False">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid  x:Name="dataTemplateGrid" Background="{TemplateBinding Background}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <WrapPanel Grid.Column="0" Height="50">
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Margin="10" FontSize="20"  Text="{Binding Path=Name}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="1" Margin="10" FontSize="20"  Text="{Binding Path=Surname}" VerticalAlignment="Center"/>
+                                    </WrapPanel>
+                                    <Image Height="50" HorizontalAlignment="Right" Grid.Column="1" Source="{Binding Path=Sex, Converter={StaticResource SexToPathConventer}}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid  Height="80" x:Name="dataTemplateGrid" Background="{TemplateBinding Background}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <WrapPanel Grid.Column="0">
+                                        <StackPanel Grid.Column="0">
+                                            <WrapPanel>
+                                                <TextBlock Margin="5" FontSize="20"  Text="{Binding Path=Name}" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="1" Margin="5" FontSize="20"  Text="{Binding Path=Surname}" VerticalAlignment="Center"/>
+                                            </WrapPanel>
+                                            <WrapPanel>
+                                                <TextBlock Margin="3" FontSize="12" FontWeight="Bold"  Text="E-mail: " VerticalAlignment="Center"/>
+                                                <TextBlock Margin="3" FontSize="11"  Text="{Binding Path=Email}" VerticalAlignment="Center"/>
+                                            </WrapPanel>
+                                            <WrapPanel>
+                                                <TextBlock Margin="3" FontSize="12" FontWeight="Bold" Text="Phone:" VerticalAlignment="Center"/>
+                                                <TextBlock Margin="3" FontSize="11"  Text="{Binding Path=PhoneNumber}" VerticalAlignment="Center"/>
+                                            </WrapPanel>
+                                        </StackPanel>
+
+                                    </WrapPanel>
+                                    <Image Height="50" HorizontalAlignment="Right" Grid.Column="1" Source="{Binding Path=Sex, Converter={StaticResource SexToPathConventer}}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+
+
+
+        </Style>
+
+
+
+
+
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Height="20" Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Import" Click="btnOpenFile_Click" IsEnabled="True"/>
+                <MenuItem Header="Export" Click="btnSaveFile_Click" IsEnabled="True"/>
+                <MenuItem Header="Exit" Click="ExitMenu_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Contacts" >
+                <MenuItem Header="Add contact" Click="AddContactsMenu_Click"/>
+                <MenuItem Header="Clear contacts" Click="ClearContactsMenu_Click"/>
+            </MenuItem>
+            <MenuItem Header="About" Click="AboutMenu_Click"/>
+        </Menu>
+
+
+
+        <TabControl Grid.Row="1" x:Name="TabControlRow">
+            <TabItem Header="List">
+                <ListBox ItemContainerStyle="{StaticResource listBoxItemStyleTriggeer }" HorizontalContentAlignment="Stretch" AlternationCount="100" x:Name="contactsList" ItemsSource="{Binding Source={StaticResource ContactsViewSource}}">
+                </ListBox>
+            </TabItem>
+            <TabItem Header="Grid">
+                <DataGrid ItemsSource="{Binding Contacts}" Name = "dataGrid" AlternatingRowBackground = "LightBlue"  
+                             AlternationCount = "2" AutoGenerateColumns = "False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header = "Name" Binding = "{Binding Name}" />
+                        <DataGridTextColumn Header = "Surname" Binding = "{Binding Surname}" />
+                        <DataGridTextColumn Header = "Email" Binding = "{Binding Email}" />
+                        <DataGridTextColumn Header = "PhoneNumber" Binding = "{Binding PhoneNumber}" />
+                        <DataGridComboBoxColumn Header = "Sex" SelectedItemBinding = "{Binding Sex}" 
+                         ItemsSource = "{Binding Source = {StaticResource SexEnum}}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Validation settings">
+                <Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="ItemTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="Validation settings" FontSize="30"  FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <WrapPanel HorizontalAlignment="Center" Grid.Row="1">
+                            <Label Width="250" FontSize="20" Content="Name validation:"/>
+                            <ComboBox Margin="3" x:Name="NameValidationComboBox" Width="200" ItemsSource="{Binding validations}"/>
+                        </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center" Grid.Row="2">
+                            <Label Width="250" FontSize="20" Content="Surname validation:"/>
+                            <ComboBox Margin="3" x:Name="SurnameValidationComboBox" Width="200" ItemsSource="{Binding validations}"/>
+                        </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center" Grid.Row="3">
+                            <Label Width="250" FontSize="20" Content="Email validation:"/>
+                            <ComboBox Margin="3" x:Name="EmailValidationComboBox" Width="200" ItemsSource="{Binding validations}"/>
+                        </WrapPanel>
+                        <WrapPanel HorizontalAlignment="Center" Grid.Row="4">
+                            <Label Width="250" FontSize="20" Content="Phone validation:"/>
+                            <ComboBox Margin="3" x:Name="PhoneValidationComboBox" Width="200" ItemsSource="{Binding validations}"/>
+                        </WrapPanel>
+                        <Button Margin="15" Width="200"  Grid.Row="5" HorizontalAlignment="Center" Content="Lock validation settings" Click="StateButton_Click2"/>
+                    </Grid>
+
+
+                    <Rectangle Fill="WhiteSmoke" Name="ThirdWindowRectangle" Visibility="{Binding State, Converter={StaticResource StateToVisibility1}}">
+
+                    </Rectangle>
+                    <Button  Height="50" FontSize="15" Width="300" Visibility="{Binding State, Converter={StaticResource StateToVisibility1}}" Name="ThirdWindowButton" Click="StateButton_Click1" Content="Unlock validation settings" >
+
+                    </Button>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Rectangle Grid.Row="1" x:Name="GrayRectangle" Opacity="0.6" Fill="Gray" Visibility="Hidden"/>
+    </Grid>
+</Window>

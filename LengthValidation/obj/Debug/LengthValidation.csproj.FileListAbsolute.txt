@@ -1,0 +1,18 @@
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\bin\Debug\LengthValidation.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\bin\Debug\LengthValidation.pdb
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\bin\Debug\Interface.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\bin\Debug\Interface.pdb
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\obj\Debug\LengthValidation.csprojAssemblyReference.cache
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\obj\Debug\LengthValidation.csproj.CoreCompileInputs.cache
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\obj\Debug\LengthValidation.csproj.CopyComplete
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\obj\Debug\LengthValidation.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\LengthValidation\obj\Debug\LengthValidation.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\bin\Debug\LengthValidation.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\bin\Debug\LengthValidation.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\bin\Debug\Interface.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\bin\Debug\Interface.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\obj\Debug\LengthValidation.csprojAssemblyReference.cache
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\obj\Debug\LengthValidation.csproj.CoreCompileInputs.cache
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\obj\Debug\LengthValidation.csproj.CopyComplete
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\obj\Debug\LengthValidation.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\LengthValidation\obj\Debug\LengthValidation.pdb

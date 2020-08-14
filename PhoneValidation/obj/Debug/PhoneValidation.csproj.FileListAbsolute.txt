@@ -1,0 +1,18 @@
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\bin\Debug\PhoneValidation.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\bin\Debug\PhoneValidation.pdb
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\bin\Debug\Interface.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\bin\Debug\Interface.pdb
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\obj\Debug\PhoneValidation.csprojAssemblyReference.cache
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\obj\Debug\PhoneValidation.csproj.CoreCompileInputs.cache
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\obj\Debug\PhoneValidation.csproj.CopyComplete
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\obj\Debug\PhoneValidation.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\PhoneValidation\obj\Debug\PhoneValidation.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\bin\Debug\PhoneValidation.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\bin\Debug\PhoneValidation.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\bin\Debug\Interface.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\bin\Debug\Interface.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\obj\Debug\PhoneValidation.csprojAssemblyReference.cache
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\obj\Debug\PhoneValidation.csproj.CoreCompileInputs.cache
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\obj\Debug\PhoneValidation.csproj.CopyComplete
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\obj\Debug\PhoneValidation.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\PhoneValidation\obj\Debug\PhoneValidation.pdb

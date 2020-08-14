@@ -1,0 +1,16 @@
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\bin\Debug\EmailValidation.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\bin\Debug\EmailValidation.pdb
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\bin\Debug\Interface.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\obj\Debug\EmailValidation.csprojAssemblyReference.cache
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\obj\Debug\EmailValidation.csproj.CoreCompileInputs.cache
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\obj\Debug\EmailValidation.csproj.CopyComplete
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\obj\Debug\EmailValidation.dll
+C:\Users\xsnailu\Desktop\WPFLABDZISIEJSZE\WpfApp\EmailValidation\obj\Debug\EmailValidation.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\bin\Debug\EmailValidation.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\bin\Debug\EmailValidation.pdb
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\bin\Debug\Interface.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\obj\Debug\EmailValidation.csprojAssemblyReference.cache
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\obj\Debug\EmailValidation.csproj.CoreCompileInputs.cache
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\obj\Debug\EmailValidation.csproj.CopyComplete
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\obj\Debug\EmailValidation.dll
+C:\Users\xsnailu\Desktop\Programowanie w środowisku graficznym\WPFHome_16_slimakm_304\WPFHome_16_login_304\EmailValidation\obj\Debug\EmailValidation.pdb
