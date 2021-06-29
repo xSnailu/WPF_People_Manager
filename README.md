@@ -1,3 +1,3 @@
 # WPF_People_Manager
 
-Simple people menager with graphic interface in WPF.
+Simple people list manager with poor graphic interface in WPF.
